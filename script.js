@@ -71,7 +71,7 @@ if (rsvpFormElement) {
     formData.append('drinks', drinks.join(', ')); // добавляем одну строку
 
     // ТВОЙ УНИКАЛЬНЫЙ URL (который ты получил)
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbwc7h815Ht_zVxEv926_NhtNcjsSxQ9hDbQlIgSJfCLtrwDxbBH-LhaoBGe5JUXk0IotA/exec';
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbyvXJ1LlRMUhaMBMZ7FhiDNpoKp0R1bBcwydkMa3aE4Y1raA8pOr4PFszt2C4AlwbaVFw/exec';
 
     // Показываем, что отправка идёт
     const messageDiv = document.getElementById('form-message') || createMessageDiv();
@@ -79,26 +79,24 @@ if (rsvpFormElement) {
     messageDiv.className = 'form-message loading';
 
     // Отправляем данные
-    fetch(scriptURL, {
-      method: 'POST',
-      body: formData
-    })
-    .then(response => response.json())
-    .then(data => {
-      if (data.result === 'success') {
-        messageDiv.innerHTML = 'Спасибо! Ваш ответ записан. До встречи!';
-        messageDiv.className = 'form-message success';
-        rsvpFormElement.reset(); // очищаем форму
-      } else {
-        messageDiv.innerHTML = 'Ошибка. Попробуйте ещё раз.';
-        messageDiv.className = 'form-message error';
-      }
-    })
-    .catch(error => {
-      console.error('Ошибка:', error);
-      messageDiv.innerHTML = 'Ошибка отправки. Проверьте интернет.';
-      messageDiv.className = 'form-message error';
-    });
+fetch(scriptURL, {
+  method: 'POST',
+  mode: 'no-cors',
+  headers: {
+    'Content-Type': 'application/x-www-form-urlencoded'
+  },
+  body: new URLSearchParams(formData).toString()
+})
+.then(() => {
+  messageDiv.innerHTML = 'Спасибо! Ваш ответ записан. До встречи!';
+  messageDiv.className = 'form-message success';
+  rsvpFormElement.reset();
+})
+.catch(error => {
+  console.error('Ошибка:', error);
+  messageDiv.innerHTML = 'Ошибка отправки. Проверьте интернет.';
+  messageDiv.className = 'form-message error';
+	});
   });
 }
 
@@ -116,5 +114,4 @@ function createMessageDiv() {
 // - вращение цветов
 // - появление элементов при скролле
 // - таймер
-
 // - форма
