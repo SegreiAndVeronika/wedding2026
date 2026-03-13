@@ -71,7 +71,7 @@ if (rsvpFormElement) {
     formData.append('drinks', drinks.join(', ')); // добавляем одну строку
 
     // ТВОЙ УНИКАЛЬНЫЙ URL (который ты получил)
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbxEnlnfMNt_-XMNT80Bm9__3Qmo_pAI1uYqOMjbL1C3mgBSNdRjjJsV0i0VFVTKY3fDlQ/exec';
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbwc7h815Ht_zVxEv926_NhtNcjsSxQ9hDbQlIgSJfCLtrwDxbBH-LhaoBGe5JUXk0IotA/exec';
 
     // Показываем, что отправка идёт
     const messageDiv = document.getElementById('form-message') || createMessageDiv();
@@ -116,4 +116,5 @@ function createMessageDiv() {
 // - вращение цветов
 // - появление элементов при скролле
 // - таймер
+
 // - форма
