@@ -1,0 +1,1725 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Cormorant Unicase', serif;  /* ОСНОВНОЙ ШРИФТ - Cormorant Unicase */
+  background-color: #F5F0E8;
+  color: #2c2c2c;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ===== ПЕРВАЯ СТРАНИЦА ===== */
+.first-page {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 50px 20px 20px 20px; /* верх  право  низ  лево */
+  background-color: transparent;
+}
+
+/* ===== ДАТА (TANGERINE) ===== */
+.date-wrapper {
+  width: 100%;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.date {
+  font-family: 'Tangerine', cursive;  /* TANGERINE ТОЛЬКО ДЛЯ ДАТЫ */
+  font-weight: 400;
+  font-size: 36px;
+  color: #6B8E4C;
+  letter-spacing: 4px;
+  margin: 0;
+  line-height: 0.9;
+}
+
+/* ===== ИМЕНА (ТЕПЕРЬ CORMORANT UNICASE) ===== */
+.names-wrapper {
+  text-align: center;
+  margin-bottom: 20px;
+  line-height: 0.9;
+  position: relative;    
+  z-index: 30;           /* ДОБАВЬ ЭТО — ЧИСЛО БОЛЬШЕ, ЧЕМ У ВЕТОЧКИ */
+}
+
+.name-line {
+  font-family: 'Cormorant Unicase', serif;  /* CORMORANT ДЛЯ ИМЁН */
+  font-weight: 300;
+  font-size: 56px;
+  line-height: 1.1;
+  color: #000000;
+  line-height: 0.9;
+  letter-spacing: -3px;
+}
+
+.name-ampersand {
+  font-family: 'Tangerine', cursive;  /* TANGERINE ДЛЯ & */
+  font-weight: 700;
+  font-size: 56px;
+  color: #6B8E4C;
+  margin: 5px 0;
+  line-height: 0.1;
+}
+
+/* ===== ФОТО - ЕЩЁ МЕНЬШЕ ===== */
+.photo-wrapper {
+  position: relative;
+  width: 60%;           /* БЫЛО 80%, СТАЛО 60% - ЕЩЁ МЕНЬШЕ */
+  max-width: 280px;      /* БЫЛО 350px, СТАЛО 280px */
+  margin: 0 auto 30px;   /* УВЕЛИЧИЛ НИЖНИЙ ОТСТУП, ЧТОБЫ ГИРЛЯНДА НЕ НАЛЕЗАЛА */
+}
+
+.main-photo {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 0;
+}
+
+/* ===== ВЕТОЧКИ ===== */
+.branch {
+  position: absolute;
+  width: auto;
+  height: auto;
+  max-width: 130px;
+  z-index: 10;
+  pointer-events: none;
+}
+
+/* ВЕТОЧКА СПРАВА - ВПРИТЫК К ЛЕВОЙ СТЕНКЕ */
+.branch-right-middle {
+  position: absolute;
+  left: 80px;           /* БЫЛО right: -25px, ТЕПЕРЬ left: -40px - ВПРИТЫК СЛЕВА */
+  top: -5%;
+  transform: translateY(-50%) skewY(3deg);
+  max-width: 300px;
+  z-index: 20;
+}
+
+/* ВЕТОЧКА СЛЕВА СВЕРХУ */
+.branch-left-top {
+  position: absolute;
+  left: -65px;
+  top: -50px;
+  max-width: 300px;
+  transform: skewY(-5deg);
+  z-index: 15;
+}
+
+/* ===== КОНТЕЙНЕР ДЛЯ ОГОНЬКОВ ===== */
+.garland-wrapper {
+  position: relative;
+  width: 125%;
+  display: flex;
+  justify-content: center;
+  margin: -190px auto 0;    /* ТВОЙ ОТСТУП */
+  z-index: 5;
+  left: -43px;              /* ТВОЙ СДВИГ ВЛЕВО */
+}
+
+.garland {
+  display: block;
+  max-width: 90%;
+  height: auto;
+}
+
+/* КОНТЕЙНЕР ОГОНЬКОВ (ПОВЕРХ ГИРЛЯНДЫ) */
+.garland-lights {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;  /* чтобы не мешали кликам */
+}
+
+/* ОБЩИЙ СТИЛЬ ДЛЯ ВСЕХ ОГОНЬКОВ */
+.light {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #FFEBC2;    /* очень светлый тёплый белый */
+  box-shadow: 0 0 12px #FFD89C;  /* мягкое свечение */
+  animation: blink 3s infinite;
+}
+
+/* ИНДИВИДУАЛЬНОЕ ПОЛОЖЕНИЕ КАЖДОГО ОГОНЬКА */
+.light-1 { top: 18%; left: 11%; animation-delay: 0s; }
+.light-2 { top: 41%; left: 32%; animation-delay: 0.2s; }
+.light-3 { top: 40%; left: 39%; animation-delay: 0.4s; }
+.light-4 { top: 49%; left: 48%; animation-delay: 0.6s; }
+.light-5 { top: 55%; left: 66%; animation-delay: 0.8s; }
+.light-6 { top: 28%; left: 25%; animation-delay: 1s; }
+.light-7 { top: 48%; left: 52.5%; animation-delay: 1.2s; }
+
+/* АНИМАЦИЯ МОРГАНИЯ */
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+    background: #FFFDE7;
+    box-shadow: 0 0 20px #FFF5E0;
+  }
+  50% {
+    opacity: 0.3;
+    transform: scale(0.8);
+    background: #FFFDE7;
+    box-shadow: 0 0 5px #FFF5E0;
+  }
+}
+
+/* ===== ОТСТУП ПОСЛЕ ГИРЛЯНДЫ ===== */
+.spacer-after-garland {
+  width: 100%;
+}
+
+/* ===== ПЛЕЙСХОЛДЕР ===== */
+.next-blocks-placeholder {
+  width: 100%;
+  font-family: 'Cormorant Unicase', serif;  /* ТЕПЕРЬ ТОЖЕ CORMORANT */
+}
+
+/* ===== АНИМАЦИЯ ДЛЯ ВСЕХ ВЕТОЧЕК ===== */
+.branch {
+  animation: wave 3s ease-in-out infinite;
+}
+
+/* РАЗНАЯ СКОРОСТЬ ДЛЯ КАЖДОЙ ВЕТОЧКИ */
+.branch-left-top {
+  animation: wave 2.8s ease-in-out infinite;
+}
+
+.branch-right-middle {
+  animation: wave 3.2s ease-in-out infinite;
+}
+
+/* САМА АНИМАЦИЯ (ВВЕРХ-ВНИЗ С ЛЁГКИМ ПОВОРОТОМ) */
+@keyframes wave {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-3px) rotate(0.5deg);
+  }
+  50% {
+    transform: translateY(3px) rotate(-0.5deg);
+  }
+  75% {
+    transform: translateY(-2px) rotate(0.3deg);
+  }
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+}
+
+/* ============================================================================
+   ВТОРАЯ СТРАНИЦА — ПОЛНЫЙ КОНТРОЛЬ
+   ============================================================================ */
+
+/* ---------------------- ОСНОВА СТРАНИЦЫ --------------------- */
+.second-page {
+  position: relative;
+  width: 100%;
+  min-height: 1200px;          /* меняй — выше/ниже страница */
+  background-color: #37402F;   /* #37402F */
+  color: #ffffff;
+  padding: 40px 20px;
+  margin-top: -100px;           /* выше/ниже наплыв на первую страницу */
+  overflow: visible;
+  z-index: 5;
+  font-family: 'Cormorant Unicase', serif;
+}
+
+/* Контейнер — всё позиционируется относительно него */
+.second-page-container {
+  position: relative;
+  max-width: 480px;
+  margin: 0 auto;
+  min-height: 1200px;           /* должна совпадать с .second-page */
+  z-index: 10;
+}
+
+/* ---------------------- КОНТЕНТ (ТЕКСТ) --------------------- */
+.second-page-content {
+  position: absolute;            /* независимое позиционирование */
+  top: 15%;                      /* от центра страницы (меняй) */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 100%;
+  z-index: 20;
+}
+
+.second-page-title {
+  font-size: 35px;
+  font-weight: 300;
+  letter-spacing: 4px;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+.second-page-subtitle {
+  font-family: 'Tangerine', cursive;
+  font-size: 25px;
+  color: #FFEBC2;
+  margin-bottom: 10px;
+}
+
+.second-page-text {
+  font-size: 18px;
+  font-weight: 300;
+  max-width: 350px;
+  margin: 0 auto 40px;
+  color: rgba(255,255,255,0.9);
+}
+
+/* ---------------------- ВЕРТИКАЛЬНАЯ ДАТА --------------------- */
+.second-page-date-vertical {
+  position: absolute;
+  top: 45%;                      /* ниже текста (меняй) */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #ffffff;
+  z-index: 20;
+}
+
+.date-number {
+  font-size: 60px;
+  line-height: 1.2;
+}
+
+.date-dot {
+  font-size: 10px;
+  line-height: 1;
+}
+
+/* ---------------------- КАЛЕНДАРЬ (СЕНТЯБРЬ 2026) --------------------- */
+.second-page-calendar {
+  position: absolute;
+  top: 75%;                      /* под датой (меняй) */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  z-index: 20;
+}
+
+.calendar-month {
+  font-size: 24px;
+  margin-bottom: 15px;
+  letter-spacing: 2px;
+  color: #FFEBC2;
+}
+
+.calendar-weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  font-size: 14px;
+  margin-bottom: 10px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.calendar-days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 5px;
+  font-size: 16px;
+}
+
+/* Обычная ячейка дня */
+.calendar-day {
+  padding: 5px;
+  text-align: center;
+  position: relative;
+  color: #ffffff;
+}
+
+/* Ячейка с сердечком — только позиционирование */
+.calendar-day.with-heart {
+  position: relative;
+  color: #FFEBC2;               /* цвет цифры (можешь поменять) */
+  font-weight: bold;
+}
+
+/* Само сердечко — отдельный тег в HTML */
+.heart-overlay {
+  position: absolute;
+  top: 178px;                    /* двигай */
+  left: 75%;
+  transform: translateX(-50%);
+  width: 55px;                   /* размер */
+  height: auto;
+  pointer-events: none;
+  z-index: 5;
+}
+
+/* ---------------------- РВАНЫЕ КРАЯ --------------------- */
+.ripped-edge {
+  position: absolute;
+  width: 100%;
+  height: 200px;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: top;
+  z-index: 5;
+  pointer-events: none;
+}
+
+/* Входной край (сверху) */
+.ripped-edge-1 {
+  top: -240px;                    /* выше/ниже */
+  left: 0;
+  width: 120%;
+  height: 250px;
+  background-image: url('images/ripped-edge-1.png');
+}
+
+/* ---------------------- ГИРЛЯНДЫ --------------------- */
+/* Первая гирлянда */
+.garland-second-1 {
+  position: absolute;
+  top: 28%;                        /* выше/ниже */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 110%;
+  z-index: 15;
+  pointer-events: none;
+}
+
+.garland-second-1 img {
+  width: 100%;
+  height: auto;
+  opacity: 0.8;
+}
+
+/* Вторая гирлянда */
+.garland-second-2 {
+  position: absolute;
+  top: 62%;                        /* выше/ниже */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 110%;
+  z-index: 15;
+  pointer-events: none;
+}
+
+.garland-second-2 img {
+  width: 100%;
+  height: auto;
+  opacity: 0.8;
+  transform: scaleX(-1);
+}
+
+/* ---------------------- ОГОНЬКИ (20 ШТУК) --------------------- */
+.garland-lights {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.garland-light {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #FFEBC2;
+  box-shadow: 0 0 12px #FFD89C;
+  animation: blink 3s infinite;
+}
+
+/* 20 огоньков — расставишь сам */
+.garland-light-1  { top: 57%; left: 5%; animation-delay: 0.0s; }
+.garland-light-2  { top: 60%; left: 13%; animation-delay: 0.1s; }
+.garland-light-3  { top: 55%; left: 17.5%; animation-delay: 0.2s; }
+.garland-light-4  { top: 51%; left: 33%; animation-delay: 0.3s; }
+.garland-light-5  { top: 48%; left: 52.5%; animation-delay: 0.4s; }
+.garland-light-6  { top: 40%; left: 60%; animation-delay: 0.5s; }
+.garland-light-7  { top: 45%; left: 70%; animation-delay: 0.6s; }
+.garland-light-8  { top: 30%; left: 83%; animation-delay: 0.7s; }
+.garland-light-9  { top: 42%; left: 83%; animation-delay: 0.8s; }
+.garland-light-10 { top: 40%; left: 93%; animation-delay: 0.9s; }
+/* ------------------------------------------------------------------------ */
+.garland-light-11 { top: 174%; left: 10%; animation-delay: 1.0s; }
+.garland-light-12 { top: 178%; left: 21%; animation-delay: 1.1s; }
+.garland-light-13 { top: 187%; left: 21%; animation-delay: 1.2s; }
+.garland-light-14 { top: 190%; left: 30%; animation-delay: 1.3s; }
+.garland-light-15 { top: 185%; left: 42%; animation-delay: 1.4s; }
+.garland-light-16 { top: 192.5%; left: 41%; animation-delay: 1.5s; }
+.garland-light-17 { top: 195%; left: 56%; animation-delay: 1.6s; }
+.garland-light-18 { top: 193.5%; left: 66.5%; animation-delay: 1.7s; }
+.garland-light-19 { top: 182%; left: 3.5%;  animation-delay: 1.8s; }
+.garland-light-20 { top: 200%; left: 73%; animation-delay: 1.9s; }
+.garland-light-21 { top: 197.5%; left: 82%; animation-delay: 1.9s; }
+.garland-light-22 { top: 205%; left: 88%; animation-delay: 1.9s; }
+
+/* ---------------------- ВЕТОЧКИ ДЛЯ ВТОРОЙ СТРАНИЦЫ --------------------- */
+.second-page-branch {
+  position: absolute;
+  max-width: 300px;
+  z-index: 30;
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+.branch-top-left {
+  top: -50px;
+  left: -80px;
+  transform: rotate(-60deg);
+}
+
+.branch-bottom-right {
+  bottom: 500px;
+  right: -90px;
+  transform: rotate(0deg); /* или scaleX(-1) если надо отзеркалить */
+}
+
+/* ---------------------- АНИМАЦИИ --------------------- */
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+    background: #FFFDE7;
+    box-shadow: 0 0 20px #FFF5E0;
+  }
+  50% {
+    opacity: 0.3;
+    transform: scale(0.8);
+    background: #FFFDE7;
+    box-shadow: 0 0 5px #FFF5E0;
+  }
+}
+
+/* ---------------------- АНИМАЦИЯ ДЛЯ ВЕТОЧЕК НА ВТОРОЙ СТРАНИЦЕ --------------------- */
+.second-page-branch {
+  animation: wave 3s ease-in-out infinite;
+}
+
+.branch-top-left {
+  animation: wave 2.8s ease-in-out infinite;
+}
+
+.branch-bottom-right {
+  animation: wave 3.2s ease-in-out infinite;
+}
+
+/* САМА АНИМАЦИЯ (ВВЕРХ-ВНИЗ С ЛЁГКИМ ПОВОРОТОМ) */
+@keyframes wave {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-3px) rotate(0.5deg);
+  }
+  50% {
+    transform: translateY(3px) rotate(-0.5deg);
+  }
+  75% {
+    transform: translateY(-2px) rotate(0.3deg);
+  }
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+}
+
+/* ================================ ТРЕТЬЯ СТРАНИЦА ========================================= */
+.third-page {
+  position: relative;
+  width: 100%;
+  min-height: 900px;
+  background-color: #F5F0E8;
+  overflow: visible;
+  font-family: 'Cormorant Unicase', serif;
+  z-index: 5;
+}
+
+.third-page-container {
+  position: relative;
+  max-width: 480px;
+  margin: 0 auto;
+  min-height: 900px;
+  z-index: 10;
+}
+
+/* ===== ЗАГОЛОВОК ===== */
+.third-page .title-block {
+  position: absolute;
+  top: 12%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  z-index: 20;
+  width: 100%;
+}
+
+.third-page .title-line {
+  font-size: 48px;
+  font-weight: 300;
+  line-height: 1.2;
+  letter-spacing: -3px;
+  color: #000;
+}
+
+/* ===== ПОДЗАГОЛОВОК ===== */
+.third-page .subtitle {
+  position: absolute;
+  top: 33%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Tangerine', cursive;
+  font-size: 28px;
+  color: #000;
+  z-index: 20;
+  white-space: nowrap;
+}
+
+/* ===== НАЗВАНИЕ МЕСТА ===== */
+.third-page .venue-name {
+  position: absolute;
+  top: 36%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 36px;
+  font-weight: 400;
+  color: #000;
+  z-index: 20;
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* ===== ЦВЕТОК ===== */
+.third-page .flower {
+  position: absolute;
+  top: 47%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90px;
+  z-index: 30;
+}
+
+.third-page .flower img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ===== ФОТО ===== */
+.third-page .photo {
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  max-width: 350px;
+  z-index: 15;
+}
+
+.third-page .photo img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ===== КНОПКА ===== */
+.third-page .button {
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #37402F;
+  color: #F5F0E8;
+  font-size: 15px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  padding: 5px 20px;
+  border: none;
+  text-decoration: none;
+  text-align: center;
+  z-index: 30;
+  white-space: nowrap;
+}
+
+/* Полностью убираем эффекты при наведении и нажатии */
+.third-page .button:hover,
+.third-page .button:active,
+.third-page .button:focus,
+.third-page .button:visited {
+  background-color: #37402F;
+  color: #F5F0E8;
+  border: none;
+  outline: none;
+}
+
+/* ---------------------- НАПЛЫВ --------------------- */
+
+.third-page .ripped-edge-2 {
+  position: absolute;
+  top: -2px;                  /* наплыв сверху */
+  left: 0;
+  width: 120%;
+  height: 250px;
+  background-image: url('images/ripped-edge-2.png');
+  background-size: 100% 100%;
+  z-index: 10;
+  pointer-events: none;
+}
+/* ---------------------- ЦВЕТОК (КРУТИТСЯ ПРИ СКРОЛЛЕ) --------------------- */
+.third-page-flower {
+  position: absolute;
+  top: 2%;                      /* под календарём (меняй) */
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(0deg);
+  width: 180px;                    /* меняй размер здесь */
+  z-index: 100;
+  transition: transform 0.1s ease-out;
+  will-change: transform;
+}
+
+.third-page-flower img {
+  width: 100%;                      /* занимает всю ширину родителя */
+  height: auto;
+  opacity: 0.8;
+}
+
+/* ==================================== ЧЕТВЕРТАЯ СТРАНИЦА ======================================= */
+.fourth-page {
+  position: relative;
+  width: 100%;
+  min-height: 800px;
+  background-color: #37402F;        /* #37402F */
+  overflow: visible;
+  font-family: 'Cormorant Unicase', serif;
+  z-index: 5;
+}
+
+.fourth-page-container {
+  position: relative;
+  max-width: 480px;
+  margin: 0 auto;
+  min-height: 800px;
+  z-index: 10;
+}
+
+/* ===== РВАНО-ЗУБЧАТЫЙ КРАЙ СВЕРХУ ===== */
+.fourth-page .ripped-edge-1 {
+  position: absolute;
+  top: -247px;                       /* наплыв на третью страницу */
+  left: 0;
+  width: 120%;
+  height: 250px;
+  background-image: url('images/ripped-edge-1.png');
+  background-size: 100% 100%;
+  z-index: 6;
+  pointer-events: none;
+}
+
+/* ===== ЗАГОЛОВОК ===== */
+.fourth-title {
+  position: absolute;
+  top: 1%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 48px;
+  font-weight: 300;
+  letter-spacing: 2px;
+  color: #F5F0E8;                    /* цвет первого фона */
+  z-index: 20;
+}
+
+/* ===== ПОДЗАГОЛОВОК ===== */
+.fourth-subtitle {
+  position: absolute;
+  top: 8%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Tangerine', cursive;
+  font-size: 32px;
+  color: #F5F0E8;
+  z-index: 20;
+  white-space: nowrap;
+}
+
+/* ===== ГИРЛЯНДА ВЕРТИКАЛЬНАЯ ===== */
+.fourth-garland-vertical {
+  position: absolute;
+  top: 3%;                          /* двигай */
+  left: 33.3%;
+  transform: translateX(-50%);
+  width: auto;
+  height: auto;
+  z-index: 15;
+}
+
+.fourth-garland-vertical img {
+  width: 150%;
+  height: auto;
+  opacity: 0.8;
+}
+
+/* ===== БЛОК С ТАЙМИНГОМ ===== */
+.timeline-block {
+  position: absolute;
+  top: 23%;                          /* двигай */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  z-index: 20;
+  text-align: center;                /* центрируем */
+}
+
+.timeline-item {
+  margin-bottom: 20px;                /* отступ между пунктами */
+  color: #F5F0E8;
+}
+
+.time {
+  display: block;                     /* чтобы описание было снизу */
+  font-size: 40px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  margin-bottom: -15px;                 /* отступ между временем и описанием */
+}
+
+.event {
+  display: block;
+  font-size: 18px;
+  font-weight: 300;
+  letter-spacing: 1px;
+  line-height: 1.4;
+}
+
+/* ===== ЦВЕТОК С АНИМАЦИЕЙ ===== */
+.fourth-flower {
+  position: absolute;
+  top: 45%;                          /* двигай */
+  left: 92%;
+  transform: translate(-50%, -50%) rotate(-40deg);
+  width: 200px;
+  z-index: 30;
+  animation: flowerWave 3s ease-in-out infinite;  /* своя анимация */
+}
+
+.fourth-flower img {
+  width: 100%;
+  height: auto;
+  opacity: 0.9;
+}
+
+/* ===== ГИРЛЯНДА 3 ===== */
+.fourth-garland {
+  position: absolute;
+  top: 60%;                          /* двигай */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  z-index: 15;
+}
+
+.fourth-garland img {
+  width: 100%;
+  height: auto;
+  opacity: 0.8;
+}
+
+/* ===== ОГОНЬКИ ===== */
+.fourth-lights {
+  position: absolute;
+  top: 70%;                          /* двигай */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 200px;
+  z-index: 25;
+}
+
+.fourth-lights .light {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #FFEBC2;
+  box-shadow: 0 0 10px #FFD89C;
+  animation: blink 3s infinite;
+}
+
+/* ПОЗИЦИИ ОГОНЬКОВ (меняй под себя) */
+.fourth-lights .light-1 { top: -239%; left: 7.5%; }
+.fourth-lights .light-2 { top: -227%; left: 13%; }
+.fourth-lights .light-3 { top: -229%; left: 22%; }
+.fourth-lights .light-4 { top: -211%; left: 31%; }
+.fourth-lights .light-5 { top: -212%; left: 39%; }
+.fourth-lights .light-6 { top: -199%; left: 48%; }
+.fourth-lights .light-7 { top: -201%; left: 53%; }
+.fourth-lights .light-8 { top: -185%; left: 66%; }
+.fourth-lights .light-9 { top: -190.5%; left: 68%; }
+.fourth-lights .light-10 { top: -178%; left: 82%; }
+.fourth-lights .light-11 { top: -167%; left: 87%; }
+.fourth-lights .light-12 { top: 47%; left: 9.5%; }
+.fourth-lights .light-13 { top: 37%; left: 16%; }
+.fourth-lights .light-14 { top: 40%; left: 25%; }
+.fourth-lights .light-15 { top: 31%; left: 31%; }
+.fourth-lights .light-16 { top: 33%; left: 42%; }
+.fourth-lights .light-17 { top: 30%; left: 56.5%; }
+.fourth-lights .light-18 { top: 19%; left: 56.5%; }
+.fourth-lights .light-19 { top: 25%; left: 68%; }
+.fourth-lights .light-20 { top: 20%; left: 77.5%; }
+.fourth-lights .light-21 { top: 9%; left: 76.5%; }
+.fourth-lights .light-22 { top: 2%; left: 88.5%; }
+.fourth-lights .light-23 { top: 14%; left: 94%; }
+
+/* ===== АНИМАЦИЯ ТОЛЬКО ДЛЯ ЦВЕТКА НА 4 СТРАНИЦЕ ===== */
+@keyframes flowerWave {
+  0% {
+    transform: translate(-50%, -50%) rotate(-40deg) translateY(0);
+  }
+  20% {
+    transform: translate(-50%, -50%) rotate(-42deg) translateY(-4px);
+  }
+  40% {
+    transform: translate(-50%, -50%) rotate(-39.5deg) translateY(2px);
+  }
+  60% {
+    transform: translate(-50%, -50%) rotate(-43deg) translateY(-3px);
+  }
+  80% {
+    transform: translate(-50%, -50%) rotate(-38deg) translateY(4px);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(-40deg) translateY(0);
+  }
+}
+
+
+/* ==================================== ПЯТАЯ СТРАНИЦА ======================================= */
+.fifth-page {
+  position: relative;
+  width: 100%;
+  min-height: 1600px;
+  background-color: #F5F0E8;        /* первый цвет фона */
+  overflow: visible;
+  font-family: 'Cormorant Unicase', serif;
+  z-index: 5;
+}
+
+.fifth-page-container {
+  position: relative;
+  max-width: 480px;
+  margin: 0 auto;
+  min-height: 1600px;
+  z-index: 10;
+}
+
+/* ===== РВАНО-ЗУБЧАТЫЙ КРАЙ ===== */
+.fifth-page .ripped-edge-2 {
+  position: absolute;
+  top: -3px;
+  left: 0;
+  width: 120%;
+  height: 250px;
+  background-image: url('images/ripped-edge-2.png');
+  background-size: 100% 100%;
+  transform: scaleX(-1);
+  z-index: 6;
+  pointer-events: none;
+}
+
+/* ===== ЦВЕТОК flower2 (справа сверху) ===== */
+.fifth-flower-top {
+  position: absolute;
+  top: 10%;
+  right: -24%;
+  width: 150px;
+  z-index: 30;
+  animation: flowerWave 3s ease-in-out infinite;
+}
+
+.fifth-flower-top img {
+  width: 100%;
+  height: auto;
+  opacity: 0.9;
+}
+
+/* ===== ЗАГОЛОВОК ===== */
+.fifth-title {
+  position: absolute;
+  top: 8%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 34px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  color: #000000;
+  z-index: 20;
+}
+
+/* ===== ОСНОВНОЙ ТЕКСТ ===== */
+.fifth-text {
+  position: absolute;
+  top: 12%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.5;
+  text-align: center;
+  color: #000000;
+  z-index: 20;
+}
+
+/* ===== ПАЛИТРА ЦВЕТОВ ===== */
+.fifth-palette {
+  position: absolute;
+  top: 23%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  z-index: 20;
+}
+
+.color-dot {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  border: 1px solid rgba(0,0,0,0.1);
+}
+
+/* ===== ЦВЕТОК flower3 (слева) ===== */
+.fifth-flower-left {
+  position: absolute;
+  top: 23%;
+  left: -10%;
+  transform: translate(-50%, -50%) rotate(60deg);
+  width: 180px;
+  z-index: 30;
+  animation: flowerWaveLeft 3s ease-in-out infinite;  /* своя анимация */
+}
+
+.fifth-flower-left img {
+  width: 100%;
+  height: auto;
+  opacity: 0.9;
+}
+
+/* ===== ОТДЕЛЬНАЯ АНИМАЦИЯ ДЛЯ flower3 ===== */
+@keyframes flowerWaveLeft {
+  0% {
+    transform: translateY(0) rotate(60deg);
+  }
+  25% {
+    transform: translateY(-4px) rotate(58deg);
+  }
+  50% {
+    transform: translateY(3px) rotate(62deg);
+  }
+  75% {
+    transform: translateY(-2px) rotate(59deg);
+  }
+  100% {
+    transform: translateY(0) rotate(60deg);
+  }
+}
+
+/* ===== ЗАГОЛОВОК LADIES ===== */
+.fifth-subtitle {
+  position: absolute;
+  top: 32%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Tangerine', cursive;
+  font-size: 36px;
+  color: #000000;
+  z-index: 20;
+  white-space: nowrap;
+}
+
+/* ===== ФОТО ДЕВУШЕК ===== */
+.fifth-women {
+  position: absolute;
+  top: 48%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 300px; /* задай высоту, чтобы фото не налезали */
+  z-index: 20;
+}
+
+.women-img {
+  position: absolute;
+  width: 80px;  /* примерный размер */
+  height: auto;
+}
+
+.women-1 {
+  top: -180px;
+  left: 43%;
+  width: 80px;
+}
+
+.women-2 {
+  top: -210px;
+  left: 80%;
+  width: 50px;
+}
+
+.women-3 {
+  top: -190px;
+  left: 20%;
+  transform: translateX(-50%);
+  width: 60px;
+}
+
+.women-4 {
+  top: -60px;
+  left: 65%;
+  width: 60px;
+}
+
+.women-5 {
+  top: -60px;
+  left: 26.5%;
+  width: 70px;
+}
+
+/* ===== ЦВЕТОК flower4 (справа) ===== */
+.fifth-flower-right {
+  position: absolute;
+  top: 65%;
+  right: -34%;
+  width: 220px;
+  z-index: 30;
+  animation: flowerWave 3s ease-in-out infinite;
+}
+
+.fifth-flower-right img {
+  width: 100%;
+  height: auto;
+  opacity: 0.9;
+}
+
+/* ===== ВТОРОЙ ЦВЕТОК flower3 (слева) ===== */
+.fifth-flower-left-second {
+  position: absolute;
+  top: 53%;
+  left: -20%;
+  transform: translate(-50%, -50%) rotate(60deg);
+  width: 280px;
+  z-index: 30;
+  animation: flowerWaveLeftsecond 3s ease-in-out infinite;
+}
+
+.fifth-flower-left-second img {
+  width: 100%;
+  height: auto;
+  opacity: 0.9;
+}
+
+/* ===== ОТДЕЛЬНАЯ АНИМАЦИЯ ДЛЯ flower3 ===== */
+@keyframes flowerWaveLeftsecond {
+  0% {
+    transform: translateY(0) rotate(60deg);
+  }
+  25% {
+    transform: translateY(-4px) rotate(58deg);
+  }
+  50% {
+    transform: translateY(3px) rotate(62deg);
+  }
+  75% {
+    transform: translateY(-2px) rotate(59deg);
+  }
+  100% {
+    transform: translateY(0) rotate(60deg);
+  }
+}
+
+/* ===== ЗАГОЛОВОК GENTS ===== */
+.fifth-subtitle-gents {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Tangerine', cursive;
+  font-size: 36px;
+  color: #000000;
+  z-index: 20;
+  white-space: nowrap;
+}
+
+/* ===== ФОТО МУЖЧИН ===== */
+.fifth-men {
+  position: absolute;
+  top: 75%;
+  left: 45%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 300px;        /* контейнер для абсолютных фото */
+  z-index: 20;
+}
+
+.men-img {
+  position: absolute;
+  width: 80px;
+  height: auto;
+}
+
+.men-1 {
+  top: 10px;
+  left: 43%;
+  width: 80px;
+}
+
+.men-2 {
+  top: 20px;
+  left: 80%;
+  width: 50px;
+}
+
+.men-3 {
+  top: 10px;
+  left: 20%;
+  width: 60px;
+}
+
+.men-4 {
+  top: 40px;
+  left: 65%;
+  width: 60px;
+}
+
+
+/* ==================================== ШЕСТАЯ СТРАНИЦА ======================================= */
+.sixth-page {
+  position: relative;
+  width: 100%;
+  min-height: 700px;
+  background-color: #37402F;        /* #37402F */
+  overflow: visible;
+  font-family: 'Cormorant Unicase', serif;
+  z-index: 5;
+}
+
+.sixth-page-container {
+  position: relative;
+  max-width: 480px;
+  margin: 0 auto;
+  min-height: 700px;
+  z-index: 10;
+}
+
+/* ===== РВАНО-ЗУБЧАТЫЙ КРАЙ ===== */
+.sixth-page .ripped-edge-1 {
+  position: absolute;
+  top: -240px;
+  left: 0;
+  width: 120%;
+  height: 250px;
+  background-image: url('images/ripped-edge-1.png');
+  background-size: 100% 100%;
+  z-index: 6;
+  pointer-events: none;
+}
+
+/* ===== ЗАГОЛОВОК ===== */
+.sixth-title {
+  position: absolute;
+  top: 1%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 48px;
+  font-weight: 300;
+  letter-spacing: 2px;
+  color: #F5F0E8;                    /* цвет первого фона */
+  z-index: 20;
+}
+
+/* ===== ВЕТОЧКА branch4 (отзеркаленная справа) ===== */
+.sixth-branch-right {
+  position: absolute;
+  top: 1%;
+  right: -50px;
+  width: 300px;
+  transform: scaleX(-1);              /* отзеркаливание */
+  z-index: 25;
+  animation: wave 3s ease-in-out infinite;
+}
+
+.sixth-branch-right img {
+  width: 100%;
+  height: auto;
+  opacity: 0.8;
+}
+
+/* ===== ФОТО 1-you ===== */
+.sixth-photo {
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 150px;
+  z-index: 15;
+}
+
+.sixth-photo img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 0;
+}
+
+/* ===== ОСНОВНОЙ ТЕКСТ ===== */
+.sixth-text {
+  position: absolute;
+  top: 48%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40%;
+  font-size: 15px;
+  font-weight: 200;
+  line-height: 1.1;
+  text-align: center;
+  color: #F5F0E8;
+  z-index: 20;
+}
+
+/* ===== ИМЯ ОРГАНИЗАТОРА ===== */
+.sixth-name {
+  position: absolute;
+  top: 64%;           /* двигай */
+  left: 37%;          /* двигай */
+  font-size: 32px;
+  font-weight: 400;
+  color: #F5F0E8;
+  z-index: 20;
+}
+
+/* ===== НОМЕР ТЕЛЕФОНА ===== */
+.sixth-phone {
+  position: absolute;
+  top: 70%;           /* двигай */
+  left: 30%;          /* двигай */
+  font-size: 20px;
+  font-weight: 300;
+  letter-spacing: 1px;
+  color: #F5F0E8;
+  z-index: 20;
+}
+
+
+/* ===== ЦВЕТОК flower2 (справа от имени) ===== */
+.sixth-flower {
+  position: absolute;
+  top: 66%;
+  left: 95%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  z-index: 30;
+  animation: flowerSixth 3s ease-in-out infinite;  /* своя анимация */
+}
+
+.sixth-flower img {
+  width: 100%;
+  height: auto;
+  opacity: 0.9;
+}
+
+/* ===== ИКОНКА ТЕЛЕГРАМ ===== */
+.sixth-telegram-icon {
+  position: absolute;
+  top:78%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30px;
+  z-index: 25;
+}
+
+.sixth-telegram-icon img {
+  width: 100%;
+  height: auto;
+  opacity: 0.9;
+}
+
+/* ===== КНОПКА ===== */
+.sixth-button {
+  position: absolute;
+  top: 85%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #F5F0E8;        /* цвет первого фона */
+  color: #37402F;                    /* цвет второго фона */
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  padding: 5px 10px;
+  border: none;
+  text-decoration: none;
+  text-align: center;
+  z-index: 30;
+  white-space: nowrap;
+  transition: 0.2s;
+}
+
+/* ===== ВЕТОЧКА branch2 (слева снизу) ===== */
+.sixth-branch-left {
+  position: absolute;
+  bottom: 9%;
+  left: -40px;
+  width: 200px;
+  z-index: 25;
+  animation: branchLeftWave 3.5s ease-in-out infinite;
+}
+
+.sixth-branch-left img {
+  width: 100%;
+  height: auto;
+  opacity: 0.8;
+}
+
+/* ===== ОТДЕЛЬНАЯ АНИМАЦИЯ ДЛЯ branch2 ===== */
+@keyframes branchLeftWave {
+  0% {
+    transform: translateY(0) rotate(-2deg);
+  }
+  20% {
+    transform: translateY(-5px) rotate(0deg);
+  }
+  40% {
+    transform: translateY(2px) rotate(-4deg);
+  }
+  60% {
+    transform: translateY(-3px) rotate(-1deg);
+  }
+  80% {
+    transform: translateY(4px) rotate(-3deg);
+  }
+  100% {
+    transform: translateY(0) rotate(-2deg);
+  }
+}
+
+/* ======================= ОТДЕЛЬНАЯ АНИМАЦИЯ ДЛЯ ЦВЕТКА НА 6 СТРАНИЦЕ ========================= */
+@keyframes flowerSixth {
+  0% {
+    transform: translate(-50%, -50%) rotate(-50deg) translateY(0);
+  }
+  25% {
+    transform: translate(-50%, -50%) rotate(-55deg) translateY(-3px);
+  }
+  50% {
+    transform: translate(-50%, -50%) rotate(-47deg) translateY(2px);
+  }
+  75% {
+    transform: translate(-50%, -50%) rotate(-54deg) translateY(-2px);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(-50deg) translateY(0);
+  }
+}
+
+
+/* ==================================== СЕДЬМАЯ СТРАНИЦА ======================================= */
+.seventh-page {
+  position: relative;
+  width: 100%;
+  min-height: 1000px;
+  background-color: #F5F0E8;
+  overflow: visible;
+  font-family: 'Cormorant Unicase', serif;
+  z-index: 5;
+}
+
+.seventh-page-container {
+  position: relative;
+  max-width: 480px;
+  margin: 0 auto;
+  min-height: 1000px;
+  z-index: 10;
+}
+
+/* ===== РВАНО-ЗУБЧАТЫЙ КРАЙ ===== */
+.seventh-page .ripped-edge-2 {
+  position: absolute;
+  top: -3px;
+  left: 0;
+  width: 120%;
+  height: 250px;
+  background-image: url('images/ripped-edge-2.png');
+  background-size: 100% 100%;
+  z-index: 6;
+  pointer-events: none;
+}
+
+/* ===== ГИРЛЯНДА ===== */
+.seventh-garland {
+  position: absolute;
+  top: -1%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  z-index: 15;
+}
+
+.garland-img {
+  width: 100%;
+  height: auto;
+  opacity: 0.8;
+}
+
+.seventh-lights {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.seventh-light {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #FFEBC2;
+  box-shadow: 0 0 10px #FFD89C;
+  animation: blink 3s infinite;
+}
+
+.seventh-light-1  { top: 10%; left: 5%; }
+.seventh-light-2  { top: 15%; left: 15%; }
+.seventh-light-3  { top: 20%; left: 25%; }
+.seventh-light-4  { top: 25%; left: 35%; }
+.seventh-light-5  { top: 30%; left: 45%; }
+.seventh-light-6  { top: 35%; left: 55%; }
+.seventh-light-7  { top: 40%; left: 65%; }
+.seventh-light-8  { top: 45%; left: 75%; }
+.seventh-light-9  { top: 50%; left: 85%; }
+.seventh-light-10 { top: 55%; left: 20%; }
+.seventh-light-11 { top: 60%; left: 40%; }
+.seventh-light-12 { top: 65%; left: 70%; }
+
+/* ===== ВЫРЕЗ (ТЁМНЫЙ БЛОК) ===== */
+.seventh-cutout {
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 85%;
+  background-color: #37402F;
+  padding: 30px 20px;
+  border-radius: 0;
+  z-index: 30;  /* выше, чтобы быть поверх имен */
+}
+
+.cutout-title {
+  font-size: 32px;
+  font-weight: 300;
+  letter-spacing: 2px;
+  color: #F5F0E8;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.cutout-text {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.4;
+  color: #F5F0E8;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.cutout-date {
+  font-size: 24px;
+  font-weight: 400;
+  color: #F5F0E8;
+  text-align: center;
+  margin-bottom: 25px;
+  letter-spacing: 1px;
+}
+
+/* КНОПКА МЕНЬШЕ */
+.cutout-button {
+  display: block;
+  width: 160px;        /* было 200px */
+  margin: 0 auto;
+  background-color: #F5F0E8;
+  color: #37402F;
+  font-size: 16px;      /* было 18px */
+  font-weight: 400;
+  letter-spacing: 2px;
+  padding: 10px 0;      /* было 12px */
+  border: none;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.cutout-button:hover {
+  opacity: 0.9;
+}
+
+/* ===== ФОРМА ===== */
+.rsvp-form {
+  margin-top: 30px;
+  color: #F5F0E8;
+}
+
+.form-field {
+  margin-bottom: 20px;
+}
+
+.form-field input {
+  width: 100%;
+  padding: 10px;
+  background-color: rgba(245, 240, 232, 0.1);
+  border: 1px solid #F5F0E8;
+  color: #F5F0E8;
+  font-family: 'Cormorant Unicase', serif;
+  font-size: 16px;
+}
+
+.form-field input::placeholder {
+  color: rgba(245, 240, 232, 0.6);
+}
+
+.form-question {
+  font-size: 16px;
+  font-weight: 300;
+  margin: 20px 0 10px;
+}
+
+.form-checkbox {
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.form-checkbox input {
+  width: 16px;
+  height: 16px;
+}
+
+.form-checkbox label {
+  font-size: 16px;
+  font-weight: 300;
+}
+
+/* ===== ТЕКСТ ВНИЗУ ===== */
+.seventh-greeting {
+  position: absolute;
+  top: 52%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 18px;
+  font-weight: 300;
+  color: #000000;
+  z-index: 20;
+}
+
+.seventh-love {
+  position: absolute;
+  top: 54%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 20px;
+  font-weight: 300;
+  color: #000000;
+  z-index: 20;
+}
+
+/* ===== ИМЕНА ВНИЗУ ===== */
+.seventh-names {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: #000000;
+  z-index: 20;
+}
+
+.seventh-name {
+  font-size: 60px;
+  line-height: 0.3;
+  font-family: 'Cormorant Unicase', serif;  /* основной шрифт */
+}
+
+.seventh-ampersand {
+  font-size: 40px;
+  line-height: 1;
+  color: #6B8E4C;
+  font-family: 'Tangerine', cursive;        /* второй шрифт для & */
+}
+
+
+/* ===== АНИМАЦИИ ===== */
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.3;
+    transform: scale(0.8);
+  }
+}
+
+.submit-btn {
+  display: block;
+  width: 100%;
+  margin-top: 30px;
+  background-color: #F5F0E8;
+  color: #37402F;
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  padding: 12px 0;
+  border: none;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.submit-btn:hover {
+  opacity: 0.9;
+}
+
+
+/* ============================================================================
+   ПОДСКАЗКИ ДЛЯ ТЕБЯ
+   =========================================================================== */
+/*
+   🛠 ЧТО МОЖНО МЕНЯТЬ:
+
+   1. РАЗМЕР ФОТО — .photo-wrapper { width: 60%; max-width: 280px; }
+   2. ПОЗИЦИЯ ВЕТОЧКИ СПРАВА — .branch-right-middle { left: -40px; top: 50%; }
+   3. ВЕТОЧКА СЛЕВА — .branch-left-top { left: -15px; top: -15px; }
+   4. ПОЛОЖЕНИЕ ГИРЛЯНДЫ — .garland-wrapper { margin: 10px auto 0; }
+   5. ШИРИНА ГИРЛЯНДЫ — .garland { max-width: 90%; }
+   6. ЦВЕТ ДАТЫ И & — #B5C8A3 (фисташковый)
+   7. ОСНОВНОЙ ШРИФТ — 'Cormorant Unicase', serif
+   8. 3s — скорость (больше цифра = медленнее)
+   9. -3px / 3px — амплитуда (выше/ниже)
+   10. 0.5deg — сила поворота
+*/

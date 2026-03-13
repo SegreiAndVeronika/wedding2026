@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+  <title>Вероника и Сергей | Свадьба 19.09.2026</title>
+  <!-- Tangerine (для даты и &) -->
+  <link href="https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Cormorant Unicase (ОСНОВНОЙ ШРИФТ) -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Unicase:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!--
+    ========================================================
+    ВЕСЬ КОНТЕНТ - ОДИН СЛОЙ, ФОН ОБЫЧНЫЙ (НЕ СТАТИЧНЫЙ)
+    ========================================================
+  -->
+
+  <main class="wedding-invite">
+
+    <!-- ПЕРВАЯ СТРАНИЦА -->
+    <section class="section first-page" id="firstPage">
+
+      <!-- ДАТА (видна только в коде, на сайте не показывается) -->
+      <div class="date-wrapper">
+        <h1 class="date">19 · 09 · 26</h1>
+      </div>
+
+      <!-- ИМЕНА (комментарий только в коде) -->
+      <div class="names-wrapper">
+        <div class="name-line name-top">ВЕРОНИКА</div>
+        <div class="name-line name-ampersand">&</div>
+        <div class="name-line name-bottom">СЕРГЕЙ</div>
+      </div>
+
+      <!-- ОСНОВНОЕ ФОТО (с веточкой) -->
+      <div class="photo-wrapper" id="mainPhotoWrapper">
+        <img src="images/couple.jpg" alt="Вероника и Сергей" class="main-photo" id="couplePhoto">
+        
+        <!-- ВЕТОЧКА СПРАВА ПО СЕРЕДИНЕ (заходит на фото) -->
+        <img src="images/branch.png" alt="Веточка" class="branch branch-right-middle" id="branchRight">
+      </div>
+
+      <!-- ВЕТОЧКА СЛЕВА СВЕРХУ -->
+      <img src="images/branch2.png" alt="Веточка" class="branch branch-left-top" id="branchLeftTop">
+
+      <!-- ГИРЛЯНДА -->
+      <!-- ГИРЛЯНДА С ОГОНЬКАМИ -->
+	<div class="garland-wrapper" id="garlandWrapper">
+  	  <img src="images/garland2.png" alt="Гирлянда" class="garland" id="mainGarland">
+  
+  <!-- ОГОНЬКИ (КАЖДЫЙ МОЖНО ПОЗИЦИОНИРОВАТЬ ОТДЕЛЬНО) -->
+  	<div class="garland-lights">
+    	  <div class="light light-1"></div>
+    	  <div class="light light-2"></div>
+    	  <div class="light light-3"></div>
+    	  <div class="light light-4"></div>
+    	  <div class="light light-5"></div>
+    	  <div class="light light-6"></div>
+    	  <div class="light light-7"></div>
+  	  </div>
+	</div>
+
+      <!-- ОТСТУП ПОСЛЕ ГИРЛЯНДЫ (меняй высоту) -->
+      <div class="spacer-after-garland" style="height: 40px;"></div>
+
+    </section>
+<!-- ===== ВТОРАЯ СТРАНИЦА (ПОЛНОСТЬЮ ПЕРЕДЕЛАНА) ===== -->
+<section class="section second-page" id="secondPage">
+
+  <!-- ДВА РВАНЫХ КРАЯ (ВХОД И ВЫХОД) -->
+  <div class="ripped-edge ripped-edge-1"></div>
+
+  <div class="container second-page-container">
+
+    <!-- ВЕТОЧКИ (ПО СТАРОМУ, НО ОСТАВЛЯЕМ) -->
+    <img src="images/branch3.png" alt="Веточка" class="second-page-branch branch-top-left">
+    <img src="images/branch3-mirror.png" alt="Веточка" class="second-page-branch branch-bottom-right">
+
+    <!-- ОСНОВНОЙ ТЕКСТ -->
+    <div class="second-page-content">
+      <h2 class="second-page-title">ДОРОГИЕ<br>ДРУЗЬЯ!</h2>
+      <p class="second-page-subtitle">Save the date!</p>
+      <p class="second-page-text">
+        Это официальное приглашение на нашу свадьбу! А получили вы его потому, что мы очень хотим видеть вас в этот день рядом с нами!
+      </p>
+    </div>
+
+    <!-- ВЕРТИКАЛЬНАЯ ДАТА -->
+    <div class="second-page-date-vertical">
+      <div class="date-number">19</div>
+      <div class="date-dot">•</div>
+      <div class="date-number">09</div>
+      <div class="date-dot">•</div>
+      <div class="date-number">26</div>
+    </div>
+
+    <!-- КАЛЕНДАРЬ -->
+<div class="second-page-calendar">
+  <div class="calendar-month">СЕНТЯБРЬ</div>
+  <div class="calendar-weekdays">
+    <span>ПН</span><span>ВТ</span><span>СР</span><span>ЧТ</span><span>ПТ</span><span>СБ</span><span>ВС</span>
+  </div>
+
+  <!-- Контейнер для чисел (заполняется JS) -->
+  <div class="calendar-days" id="calendarDays"></div>
+
+  <!-- СЕРДЕЧКО (ПРОСТО ЛЕЖИТ, НО НА 19 ЧИСЛЕ) -->
+  <img src="images/heart-outline.png" alt="" class="heart-overlay" id="heartFor">
+</div>
+
+    <!-- ГИРЛЯНДА 1 (С 20 ОГОНЬКАМИ) -->
+    <div class="garland-second-1">
+      <img src="images/garland.png" alt="гирлянда 1">
+      <div class="garland-lights">
+        <div class="garland-light garland-light-1"></div>
+        <div class="garland-light garland-light-2"></div>
+        <div class="garland-light garland-light-3"></div>
+        <div class="garland-light garland-light-4"></div>
+        <div class="garland-light garland-light-5"></div>
+        <div class="garland-light garland-light-6"></div>
+        <div class="garland-light garland-light-7"></div>
+        <div class="garland-light garland-light-8"></div>
+        <div class="garland-light garland-light-9"></div>
+        <div class="garland-light garland-light-10"></div>
+        <div class="garland-light garland-light-11"></div>
+        <div class="garland-light garland-light-12"></div>
+        <div class="garland-light garland-light-13"></div>
+        <div class="garland-light garland-light-14"></div>
+        <div class="garland-light garland-light-15"></div>
+        <div class="garland-light garland-light-16"></div>
+        <div class="garland-light garland-light-17"></div>
+        <div class="garland-light garland-light-18"></div>
+        <div class="garland-light garland-light-19"></div>
+        <div class="garland-light garland-light-20"></div>
+	<div class="garland-light garland-light-21"></div>
+	<div class="garland-light garland-light-22"></div>
+      </div>
+    </div>
+
+    <!-- ГИРЛЯНДА 2 (ДОПОЛНИТЕЛЬНАЯ, ЕСЛИ НУЖНА) -->
+    <div class="garland-second-2">
+      <img src="images/garland3.png" alt="гирлянда 2">
+    </div>
+	
+  	   </div> 
+	</section>
+
+<!-- ================================== ТРЕТЬЯ СТРАНИЦА ======================================= -->
+<section class="section third-page" id="thirdPage">
+	<div class="ripped-edge-2"></div>
+  <div class="container third-page-container">
+
+    <div class="title-block">
+      <div class="title-line">МЕСТО</div>
+      <div class="title-line">ПРОВЕДЕНИЯ</div>
+    </div>
+
+    <div class="subtitle">Save the place!</div>
+    <div class="venue-name">База 85</div>
+
+    <div class="flower">
+      <img src="images/flowers2.png" alt="цветок">
+    </div>
+
+    <div class="photo">
+      <img src="images/venue.jpg" alt="место">
+    </div>
+
+    <a href="https://yandex.com/maps/-/CPuJE-p1" target="_blank" class="button">
+      КАК ДОБРАТЬСЯ
+    </a>
+  </div>
+
+<div class="third-page-flower">
+  <img src="images/flowers.png" alt="цветок">
+</div>
+
+</section>
+
+<!-- ===== ЧЕТВЕРТАЯ СТРАНИЦА (ТАЙМИНГ) ===== -->
+<section class="section fourth-page" id="fourthPage">
+
+  <!-- РВАНО-ЗУБЧАТЫЙ КРАЙ (наплыв с третьей страницы) -->
+  <div class="ripped-edge-1"></div>
+
+  <div class="container fourth-page-container">
+
+    <!-- ЗАГОЛОВОК -->
+    <div class="fourth-title">ТАЙМИНГ</div>
+
+    <!-- ПОДЗАГОЛОВОК -->
+    <div class="fourth-subtitle">Of the day</div>
+
+    <!-- ГИРЛЯНДА 2 (В СТОЛБИК) -->
+    <div class="fourth-garland-vertical">
+      <img src="images/garland2.png" alt="гирлянда">
+    </div>
+
+    <!-- БЛОК С ТАЙМИНГОМ -->
+    <div class="timeline-block">
+      <div class="timeline-item">
+        <span class="time">16:00</span>
+        <span class="event">сборы, фуршет</span>
+      </div>
+      <div class="timeline-item">
+        <span class="time">16:30</span>
+        <span class="event">выездная церемония</span>
+      </div>
+      <div class="timeline-item">
+        <span class="time">17:00</span>
+        <span class="event">банкет</span>
+      </div>
+      <div class="timeline-item">
+        <span class="time">23:00</span>
+        <span class="event">завершение вечера</span>
+      </div>
+    </div>
+
+    <!-- ЦВЕТОК flower (анимация как у веточек) -->
+    <div class="fourth-flower">
+      <img src="images/flower.png" alt="цветок">
+    </div>
+
+    <!-- ГИРЛЯНДА 3 -->
+    <div class="fourth-garland">
+      <img src="images/garland3.png" alt="гирлянда 3">
+    </div>
+
+    <!-- ОГОНЬКИ (как на третьей странице) -->
+    <div class="fourth-lights">
+        <div class="light light-1"></div>
+        <div class="light light-2"></div>
+        <div class="light light-3"></div>
+        <div class="light light-4"></div>
+        <div class="light light-5"></div>
+	<div class="light light-6"></div>
+	<div class="light light-7"></div>
+	<div class="light light-8"></div>
+	<div class="light light-9"></div>
+	<div class="light light-10"></div>
+	<div class="light light-11"></div>
+	<div class="light light-12"></div>
+	<div class="light light-13"></div>
+	<div class="light light-14"></div>
+	<div class="light light-15"></div>
+	<div class="light light-16"></div>
+	<div class="light light-17"></div>
+	<div class="light light-18"></div>
+	<div class="light light-19"></div>
+	<div class="light light-20"></div>
+	<div class="light light-21"></div>
+	<div class="light light-22"></div>
+	<div class="light light-23"></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- =========================== ПЯТАЯ СТРАНИЦА (ДРЕСС-КОД) ================================== -->
+<section class="section fifth-page" id="fifthPage">
+
+  <!-- РВАНО-ЗУБЧАТЫЙ КРАЙ СВЕРХУ (ripped-edge-2) -->
+  <div class="ripped-edge-2"></div>
+
+  <div class="container fifth-page-container">
+
+    <!-- ЦВЕТОК flower2 (справа сверху) -->
+    <div class="fifth-flower-top">
+      <img src="images/flower2.png" alt="цветок">
+    </div>
+
+    <!-- ЗАГОЛОВОК -->
+    <div class="fifth-title">ДРЕСС-КОД</div>
+
+    <!-- ОСНОВНОЙ ТЕКСТ -->
+    <div class="fifth-text">
+      Мы очень ждём и готовимся к нашему незабываемому дню! Поддержите нас Вашими улыбками и объятиями, а также красивыми нарядами в палитре мероприятия
+    </div>
+
+    <!-- ПАЛИТРА ЦВЕТОВ (кружочки) -->
+    <div class="fifth-palette">
+      <div class="color-dot" style="background-color: #7A8156;"></div>
+      <div class="color-dot" style="background-color: #F5A000;"></div>
+      <div class="color-dot" style="background-color: #E84E26;"></div>
+      <div class="color-dot" style="background-color: #E68A91;"></div>
+      <div class="color-dot" style="background-color: #D12B6D;"></div>
+    </div>
+
+    <!-- ЦВЕТОК flower3 (слева) -->
+    <div class="fifth-flower-left">
+      <img src="images/flower3.png" alt="цветок">
+    </div>
+
+    <!-- ЗАГОЛОВОК ДЛЯ ДЕВУШЕК -->
+    <div class="fifth-subtitle">Ladies</div>
+
+    <!-- 5 ФОТО ДЕВУШЕК (PNG) -->
+    <div class="fifth-women">
+      <img src="images/dress-woman1.png" alt="dress 1" class="women-img women-1">
+      <img src="images/dress-woman2.png" alt="dress 2" class="women-img women-2">
+      <img src="images/dress-woman3.png" alt="dress 3" class="women-img women-3">
+      <img src="images/dress-woman4.png" alt="dress 4" class="women-img women-4">
+      <img src="images/dress-woman5.png" alt="dress 5" class="women-img women-5">
+    </div>
+
+    <!-- ЦВЕТОК flower4 (справа) и flower (слева) -->
+    <div class="fifth-flower-right">
+      <img src="images/flower4.png" alt="цветок">
+    </div>
+    <div class="fifth-flower-left-second">
+      <img src="images/flower.png" alt="цветок">
+    </div>
+
+    <!-- ЗАГОЛОВОК ДЛЯ МУЖЧИН -->
+    <div class="fifth-subtitle-gents">Gents</div>
+
+    <!-- 4 ФОТО МУЖЧИН (PNG) -->
+    <div class="fifth-men">
+      <img src="images/dress-man1.png" alt="gents 1" class="men-img men-1">
+      <img src="images/dress-man2.png" alt="gents 2" class="men-img men-2">
+      <img src="images/dress-man3.png" alt="gents 3" class="men-img men-3">
+      <img src="images/dress-man4.png" alt="gents 4" class="men-img men-4">
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== ШЕСТАЯ СТРАНИЦА (КОНТАКТЫ) ===== -->
+<section class="section sixth-page" id="sixthPage">
+
+  <!-- РВАНО-ЗУБЧАТЫЙ КРАЙ СВЕРХУ (ripped-edge-1) -->
+  <div class="ripped-edge-1"></div>
+
+  <div class="container sixth-page-container">
+
+    <!-- ЗАГОЛОВОК -->
+    <div class="sixth-title">КОНТАКТЫ</div>
+
+    <!-- ВЕТОЧКА branch4 (отзеркаленная справа) -->
+    <div class="sixth-branch-right">
+      <img src="images/branch4.png" alt="ветка">
+    </div>
+
+    <!-- ФОТО 1-you -->
+    <div class="sixth-photo">
+      <img src="images/1-you.jpg" alt="фото">
+    </div>
+
+    <!-- ОСНОВНОЙ ТЕКСТ -->
+    <div class="sixth-text">
+      По всем вопросам, связанным с мероприятием, вы можете обратиться к нашему организатору
+    </div>
+
+          <!-- ИМЯ ОРГАНИЗАТОРА (двигается отдельно) -->
+<div class="sixth-name">Карина</div>
+
+<!-- НОМЕР ТЕЛЕФОНА (двигается отдельно) -->
+<div class="sixth-phone">+7 (965) 608-96-65</div>
+   
+
+    <!-- ЦВЕТОК flower2 (справа от имени и номера) -->
+    <div class="sixth-flower">
+      <img src="images/flower2.png" alt="цветок">
+    </div>
+
+    <!-- ИКОНКА ТЕЛЕГРАМ -->
+    <div class="sixth-telegram-icon">
+      <img src="images/tg.png" alt="telegram">
+    </div>
+
+    <!-- КНОПКА (ссылка на группу в Telegram) -->
+    <a href="https://t.me/your_group" target="_blank" class="sixth-button">
+      СВЯЗАТЬСЯ
+    </a>
+
+    <!-- ВЕТОЧКА branch2 (слева снизу) -->
+    <div class="sixth-branch-left">
+      <img src="images/branch2.png" alt="ветка">
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== СЕДЬМАЯ СТРАНИЦА (АНКЕТА ГОСТЯ) ===== -->
+<section class="section seventh-page" id="seventhPage">
+
+  <!-- РВАНО-ЗУБЧАТЫЙ КРАЙ СВЕРХУ (ripped-edge-2) -->
+  <div class="ripped-edge-2"></div>
+
+  <div class="container seventh-page-container">
+
+    <!-- ГИРЛЯНДА 3 С 12 ОГОНЬКАМИ -->
+    <div class="seventh-garland">
+      <img src="images/garland3.png" alt="гирлянда" class="garland-img">
+      <div class="seventh-lights">
+        <div class="seventh-light seventh-light-1"></div>
+        <div class="seventh-light seventh-light-2"></div>
+        <div class="seventh-light seventh-light-3"></div>
+        <div class="seventh-light seventh-light-4"></div>
+        <div class="seventh-light seventh-light-5"></div>
+        <div class="seventh-light seventh-light-6"></div>
+        <div class="seventh-light seventh-light-7"></div>
+        <div class="seventh-light seventh-light-8"></div>
+        <div class="seventh-light seventh-light-9"></div>
+        <div class="seventh-light seventh-light-10"></div>
+        <div class="seventh-light seventh-light-11"></div>
+        <div class="seventh-light seventh-light-12"></div>
+      </div>
+    </div>
+
+<!-- ВЫРЕЗ (БЛОК С ТЁМНЫМ ФОНОМ) -->
+<div class="seventh-cutout">
+
+  <!-- ЗАГОЛОВОК ВНУТРИ ВЫРЕЗА -->
+  <div class="cutout-title">Анкета гостя</div>
+
+  <!-- ТЕКСТ ПРИГЛАШЕНИЯ -->
+  <div class="cutout-text">
+    Пожалуйста, подтвердите ваше присутствие на нашей свадьбе до
+  </div>
+
+  <!-- ДАТА -->
+  <div class="cutout-date">19 сентября 2026</div>
+
+  <!-- КНОПКА ДЛЯ ОТКРЫТИЯ ФОРМЫ -->
+  <button class="cutout-button" id="toggleFormBtn">ПОДТВЕРДИТЬ</button>
+
+  <!-- СКРЫТАЯ ФОРМА (ТЕПЕРЬ ЭТО <form>) -->
+  <form class="rsvp-form" id="rsvpForm" style="display: none;">
+    
+    <!-- ПОЛЕ ИМЯ И ФАМИЛИЯ -->
+    <div class="form-field">
+      <input type="text" id="fullname" name="fullname" placeholder="Имя и Фамилия">
+    </div>
+
+    <!-- ВОПРОС О ПРИСУТСТВИИ (радиокнопки) -->
+    <div class="form-question">Планируете ли вы присутствовать?</div>
+
+    <div class="form-checkbox">
+      <input type="radio" name="attendance" id="attend-yes" value="С удовольствием приду!">
+      <label for="attend-yes">С удовольствием приду!</label>
+    </div>
+
+    <div class="form-checkbox">
+      <input type="radio" name="attendance" id="attend-no" value="К сожалению, не смогу">
+      <label for="attend-no">К сожалению, не смогу</label>
+    </div>
+
+    <!-- ТЕКСТ О СПУТНИКЕ -->
+    <div class="form-question">Если вы будете не одни, заполните поле ниже, пожалуйста</div>
+
+    <div class="form-field">
+      <input type="text" id="companion" name="companion" placeholder="Имя и Фамилия вашего спутника/спутницы">
+    </div>
+
+    <!-- ПРЕДПОЧТЕНИЯ -->
+    <div class="form-question">Ваши предпочтения</div>
+
+    <div class="form-checkbox"><input type="checkbox" name="drinks" id="drink1" value="Шампанское"><label for="drink1">Шампанское</label></div>
+    <div class="form-checkbox"><input type="checkbox" name="drinks" id="drink2" value="Белое вино"><label for="drink2">Белое вино</label></div>
+    <div class="form-checkbox"><input type="checkbox" name="drinks" id="drink3" value="Красное вино"><label for="drink3">Красное вино</label></div>
+    <div class="form-checkbox"><input type="checkbox" name="drinks" id="drink4" value="Виски"><label for="drink4">Виски</label></div>
+    <div class="form-checkbox"><input type="checkbox" name="drinks" id="drink5" value="Водка"><label for="drink5">Водка</label></div>
+    <div class="form-checkbox"><input type="checkbox" name="drinks" id="drink6" value="Самогон"><label for="drink6">Самогон</label></div>
+    <div class="form-checkbox"><input type="checkbox" name="drinks" id="drink7" value="Вермут"><label for="drink7">Вермут</label></div>
+    <div class="form-checkbox"><input type="checkbox" name="drinks" id="drink8" value="Не пью алкоголь"><label for="drink8">Не пью алкоголь</label></div>
+
+    <!-- КНОПКА ОТПРАВКИ -->
+    <button type="submit" class="submit-btn">ОТПРАВИТЬ</button>
+
+  </form> <!-- закрытие формы -->
+
+</div> <!-- закрытие seventh-cutout -->
+
+<!-- НАДПИСЬ ДО СКОРОЙ ВСТРЕЧИ -->
+<div class="seventh-greeting">До скорой встречи!</div>
+<div class="seventh-love">С любовью</div>
+
+<!-- ИМЕНА -->
+<div class="seventh-names">
+  <div class="seventh-name main-font">Вероника</div>
+  <div class="seventh-ampersand second-font">&</div>
+  <div class="seventh-name main-font">Сергей</div>
+</div>
+</section> 
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
