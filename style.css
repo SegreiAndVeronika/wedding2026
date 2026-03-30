@@ -360,10 +360,10 @@ body {
 /* Само сердечко — отдельный тег в HTML */
 .heart-overlay {
   position: absolute;
-  top: 178px;                    /* двигай */
+  top: 172px;                    /* двигай */
   left: 75%;
   transform: translateX(-50%);
-  width: 55px;                   /* размер */
+  width: 64px;                   /* размер */
   height: auto;
   pointer-events: none;
   z-index: 5;
