@@ -1324,7 +1324,15 @@ body {
   color: #F5F0E8;
   z-index: 20;
 }
-
+/* ===== НОМЕР ТЕЛЕФОНА (ссылку тоже красим) ===== */
+.sixth-phone a,
+.sixth-phone a:link,
+.sixth-phone a:visited,
+.sixth-phone a:hover,
+.sixth-phone a:active {
+  color: #F5F0E8 !important;
+  text-decoration: none !important;
+}
 
 /* ===== ЦВЕТОК flower2 (справа от имени) ===== */
 .sixth-flower {
